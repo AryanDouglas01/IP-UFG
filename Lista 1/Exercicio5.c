@@ -11,7 +11,7 @@ int main()
 
     det = (a*d) - (b*c);
 
-    printf("O VALOR DE DETERMINANTE E = %.2f\n", det);
+    printf("O VALOR DO DETERMINANTE E = %.2f\n", det);
 
-
+    return 0;
 }

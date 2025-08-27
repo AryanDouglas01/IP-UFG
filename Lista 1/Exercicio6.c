@@ -11,7 +11,7 @@ int main()
 
     media = (A+B)/2.0;
 
-    printf("%f", media);
+    printf("%.3f", media);
 
     return 0;
 }

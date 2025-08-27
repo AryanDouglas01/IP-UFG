@@ -1,26 +1,20 @@
 #include <stdio.h>
+#include<math.h>
 
 int main()
 {
 
-    int num, algarismo1, algarismo2, algarismo3, digitofinal;
+  float x1,x2,y1,y2,distancia;
 
-    scanf("%d", &num);
+  scanf("%f", &x1);
+  scanf("%f", &y1);
+  scanf("%f", &x2);
+  scanf("%f", &y2);
 
-    if(num > 999 || num < 100)
-    {
-        printf("Numero invalido\n");
-        return 0;
-    }
+  distancia = sqrt(pow(x2-x1,2) + pow(y2-y1,2));
 
-    algarismo1 = num/100;
-    algarismo2 = num/10 % 10;
-    algarismo3 = num % 10;
-    
-    digitofinal = (algarismo1 + algarismo2 * 3 + algarismo3 * 5) % 7;
+  printf("A DISTANCIA ENTRE A e B = %.2f", distancia);
 
-    printf("O NOVO NUMERO E = %d%d", num, digitofinal);
-
-    return 0;
+  return 0;
 
 }
