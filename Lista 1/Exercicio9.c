@@ -2,10 +2,10 @@
 
 int main()
 {
-    float num, result1, result2, result3;
+    double num, result1, result2, result3;
     int ultimoDigito, num1, num2, num3;
 
-    scanf("%f", &num); 
+    scanf("%lf", &num); 
 
     num1 = num * 100;
     ultimoDigito = num1 % 10;
@@ -20,7 +20,7 @@ int main()
     }
 
     result1 = num1 / 10.0;
-    printf("%.6f", result1);
+    printf("%.6lf", result1);
 
     num2 = num * 1000;
     ultimoDigito = num2 % 10;
@@ -34,7 +34,7 @@ int main()
         num2 = num2 / 10;
     }
     result2 = num2 / 100.0;
-    printf("\n%.6f", result2);
+    printf("\n%.6lf", result2);
 
     num3 = num * 10000;
     ultimoDigito = num3 % 10;
@@ -49,7 +49,7 @@ int main()
     }
 
     result3 = num3/1000.0;
-    printf("\n%.6f", result3);
+    printf("\n%.6lf", result3);
 
     return 0;
 }
