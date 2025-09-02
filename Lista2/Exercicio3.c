@@ -32,7 +32,7 @@ int main()
         else if (consumo <= 80)
         {
             valor = 500;
-            printf("CONTA = %d", conta);
+            printf("CONTA = %d\n", conta);
             printf("VALOR DA CONTA = %.2lf\n", valor);
         }
         
