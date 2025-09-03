@@ -1,45 +1,45 @@
-    #include<stdio.h>
+#include<stdio.h>
 
-    int main()
+int main()
+{
+    double prova1,prova2,prova3,prova4,prova5,prova6,prova7,prova8,media_provas;
+    double lista1,lista2,lista3,lista4,lista5,media_listas;
+    double nota_trabalho_final, nota_final;
+    double horas_requisito, horas_aluno;
+    int matricula;
+
+    horas_requisito = 128 * (0.75); // Mínimo 96 horas ;
+    scanf("%d",&matricula);
+
+    while(matricula != -1)
     {
-        float prova1,prova2,prova3,prova4,prova5,prova6,prova7,prova8,media_provas;
-        float lista1,lista2,lista3,lista4,lista5,media_listas;
-        float nota_trabalho_final, nota_final;
-        float horas_requisito, horas_aluno;
-        int matricula;
+        scanf("%lf %lf %lf %lf %lf %lf %lf %lf", &prova1, &prova2, &prova3, &prova4, &prova5, &prova6, &prova7, &prova8);
+        scanf("%lf %lf %lf %lf %lf", &lista1, &lista2, &lista3, &lista4, &lista5);
+        scanf("%lf", &nota_trabalho_final);
+        scanf("%lf", &horas_aluno);
 
-        horas_requisito = 128 * (0.75); // Mínimo 96 horas ;
-        scanf("%d",&matricula);
+        media_provas = (prova1+prova2+prova3+prova4+prova5+prova6+prova7+prova8)/8;
+        media_listas = (lista1+lista2+lista3+lista4+lista5)/5;
+        nota_final = 0.7 * media_provas + 0.15 * media_listas + 0.15 * nota_trabalho_final;
 
-        while(matricula != -1)
+        if(nota_final >= 6 && horas_aluno >= horas_requisito)
         {
-            scanf("%f %f %f %f %f %f %f %f", &prova1, &prova2, &prova3, &prova4, &prova5, &prova6, &prova7, &prova8);
-            scanf("%f %f %f %f %f", &lista1, &lista2, &lista3, &lista4, &lista5);
-            scanf("%f", &nota_trabalho_final);
-            scanf("%f", &horas_aluno);
-
-            media_provas = (prova1+prova2+prova3+prova4+prova5+prova6+prova7+prova8)/8;
-            media_listas = (lista1+lista2+lista3+lista4+lista5)/5;
-            nota_final = 0.7 * media_provas + 0.15 * media_listas + 0.15 * nota_trabalho_final;
-
-            if(nota_final >= 6 && horas_aluno >= horas_requisito)
-            {
-                printf("Matricula: %d, Nota Final: %.2f, Situacao Final: APROVADO\n", matricula,nota_final);
-            }
-            else if (nota_final < 6 && horas_aluno >= horas_requisito )
-            {
-                printf("Matricula: %d, Nota Final: %.2f, Situacao Final: REPROVADO POR NOTA\n", matricula,nota_final);
-            }
-            else if (nota_final >= 6 && horas_aluno < horas_requisito)
-            {
-                printf("Matricula: %d, Nota Final: %.2f, Situacao Final: REPROVADO POR FREQUENCIA\n", matricula,nota_final);
-            }
-            else if (nota_final < 6 && horas_aluno < horas_requisito)
-            {
-                printf("Matricula: %d, Nota Final: %.2f, Situacao Final: REPROVADO POR NOTA E POR FREQUENCIA\n", matricula,nota_final);
-            }
-            scanf("%d",&matricula); 
+            printf("Matricula: %d, Nota Final: %.2f, Situacao Final: APROVADO\n", matricula,nota_final);
         }
-
-        return 0;
+        else if (nota_final < 6 && horas_aluno >= horas_requisito )
+        {
+            printf("Matricula: %d, Nota Final: %.2f, Situacao Final: REPROVADO POR NOTA\n", matricula,nota_final);
+        }
+        else if (nota_final >= 6 && horas_aluno < horas_requisito)
+        {
+            printf("Matricula: %d, Nota Final: %.2f, Situacao Final: REPROVADO POR FREQUENCIA\n", matricula,nota_final);
+        }
+        else if (nota_final < 6 && horas_aluno < horas_requisito)
+        {
+            printf("Matricula: %d, Nota Final: %.2f, Situacao Final: REPROVADO POR NOTA E POR FREQUENCIA\n", matricula,nota_final);
+        }
+        scanf("%d",&matricula); 
     }
+
+    return 0;
+}
