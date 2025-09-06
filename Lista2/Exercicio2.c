@@ -11,6 +11,7 @@ int main()
     if( n1 > 9 || n2 > 9 || n3 > 9)
     {
         printf("DIGITO INVALIDO\n");
+        return 0;
     }
 
     composto = (n1 *100) + (n2*10) + n3;  
